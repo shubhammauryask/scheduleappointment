@@ -106,9 +106,6 @@ class _AddAppointment1State extends State<AddAppointment1> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                children: [],
-              ),
               Image.asset(
                 'assets/images/Property 1=Default.png',
                 height: 8,
