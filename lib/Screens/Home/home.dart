@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../Services/Drawer/NavBar.dart';
 import '../Appointment/AddAppointment1.dart';
 import '../Notification/notifications.dart';
-import '../WhatsApp/Chat.dart';
+import '../Chat/Chat.dart';
 import 'AppointmentAnalysis.dart';
 import 'PatientAnalysis.dart';
 import 'PaymentAnalysis.dart';

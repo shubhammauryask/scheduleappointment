@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Appointment/AddAppointment1.dart';
 import '../Home/home.dart';
-import '../WhatsApp/Chat.dart';
+import '../Chat/Chat.dart';
 
 class notificationPage extends StatefulWidget {
   const notificationPage({super.key});

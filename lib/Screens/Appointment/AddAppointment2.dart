@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../Home/home.dart';
 import '../Notification/notifications.dart';
-import '../WhatsApp/Chat.dart';
+import '../Chat/Chat.dart';
 import 'AddAppointment3.dart';
 import 'AddAppointment4.dart';
 

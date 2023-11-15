@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../Chat/Chat.dart';
 import '../Home/home.dart';
 import '../Notification/notifications.dart';
-import '../WhatsApp/Chat.dart';
 import 'AddAppointment4.dart';
 
 class AddAppointment3 extends StatefulWidget {

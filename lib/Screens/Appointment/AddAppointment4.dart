@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../Home/home.dart';
 import '../Notification/notifications.dart';
-import '../WhatsApp/Chat.dart';
+import '../Chat/Chat.dart';
 
 class AddAppointment4 extends StatefulWidget {
   AddAppointment4({super.key});

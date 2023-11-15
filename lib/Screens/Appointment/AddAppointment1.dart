@@ -7,7 +7,7 @@ import 'package:scheduleappointment/Screens/Appointment/AddAppointment4.dart';
 import 'package:scheduleappointment/Screens/Home/home.dart';
 
 import '../Notification/notifications.dart';
-import '../WhatsApp/Chat.dart';
+import '../Chat/Chat.dart';
 
 class AddAppointment1 extends StatefulWidget {
   AddAppointment1({super.key});
