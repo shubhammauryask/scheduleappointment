@@ -71,28 +71,28 @@ class _PatientAnalysisState extends State<PatientAnalysis> {
                 padding: EdgeInsets.only(left: 16,right: 16,),
                 height:41,
                 width: MediaQuery.of(context).size.width,
-                child: TextFormField(
-                    controller: search,
-                    maxLines: 1,
-                    inputFormatters: [LengthLimitingTextInputFormatter(40)],
-                    decoration: InputDecoration(
-                        hintText: 'My clinic',
-                        suffixIcon: Icon(Icons.arrow_drop_down,size: 30,color: Color(0xFF009394),),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                            BorderSide(width: 1, color: Color(0xFF6A798A))),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide:
-                            BorderSide(width: 1, color: Color(0xFF6A798A)))),
-                    keyboardType: TextInputType.name,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: Color(0xFF00E0C7),
-                    ),
-                    cursorColor: Color(0xFF6A798A)),
+                    child: TextFormField(
+                        controller: search,
+                        maxLines: 1,
+                        inputFormatters: [LengthLimitingTextInputFormatter(40)],
+                        decoration: InputDecoration(
+                            hintText: 'My clinic',
+                            suffixIcon: Icon(Icons.arrow_drop_down,size: 30,color: Color(0xFF009394),),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide:
+                                BorderSide(width: 1, color: Color(0xFF6A798A))),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide:
+                                BorderSide(width: 1, color: Color(0xFF6A798A)))),
+                        keyboardType: TextInputType.name,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xFF00E0C7),
+                        ),
+                        cursorColor: Color(0xFF6A798A)),
               ),
               SizedBox(height: 16,),
              Container(
