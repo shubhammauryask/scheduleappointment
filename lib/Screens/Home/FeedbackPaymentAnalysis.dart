@@ -38,8 +38,7 @@ class _FeedbackPaymentAnaylsisState extends State<FeedbackPaymentAnaylsis> {
         backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => PaymentAnalysis()));
+              Navigator.pop(context);
             },
             child: Icon(
               Icons.arrow_back,
@@ -64,7 +63,7 @@ class _FeedbackPaymentAnaylsisState extends State<FeedbackPaymentAnaylsis> {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.only(left: 27, right: 27),
+        padding: EdgeInsets.only(left: 27, right: 27,top: 10),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(

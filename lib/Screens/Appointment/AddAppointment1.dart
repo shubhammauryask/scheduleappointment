@@ -25,7 +25,7 @@ class _AddAppointment1State extends State<AddAppointment1> {
   var gender = TextEditingController();
   DateTime selectedDate = DateTime.now();
   String imageCheck = 'assets/images/Rectangle 1247.png';
-  int _page = 1;
+  int _page = 0;
   void pageState() {
     if (_page == 0) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
@@ -67,8 +67,7 @@ class _AddAppointment1State extends State<AddAppointment1> {
         backgroundColor: Colors.white,
         leading: InkWell(
             onTap: () {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => Home()));
+            Navigator.pop(context);
             },
             child: Icon(
               Icons.arrow_back,

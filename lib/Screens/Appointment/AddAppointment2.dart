@@ -28,7 +28,7 @@ class _AddAppointment2State extends State<AddAppointment2> {
   var gender = TextEditingController();
   String  imageCheck = 'assets/images/Rectangle 1247.png';
 
-  int _page = 1;
+  int _page = 0;
   void pageState() {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));

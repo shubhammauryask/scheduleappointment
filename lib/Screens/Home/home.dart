@@ -1,11 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../Services/Drawer/NavBar.dart';
 import '../Appointment/AddAppointment1.dart';
 import '../Notification/notifications.dart';
 import '../Chat/Chat.dart';
+import '../Staff Access/Staffrecord.dart';
 import 'AppointmentAnalysis.dart';
 import 'PatientAnalysis.dart';
 import 'PaymentAnalysis.dart';
@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
               child: Image.asset('assets/images/image 4.png',height: 45,width: 53,),
             ),
             Text('HealThether',style:GoogleFonts.arimo(
-              fontWeight:  FontWeight.normal,
+              fontWeight:  FontWeight.w600,
               fontSize: 28.7,
               color: Color(0xFF03BF9C),
             ),)
@@ -109,7 +109,7 @@ class _HomeState extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Dr. Ajit Bhalla',style: GoogleFonts.arimo(
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.w500,
                     fontSize: 32,
                   ),)
                 ],
@@ -183,6 +183,17 @@ class _HomeState extends State<Home> {
                         SizedBox(height: 13,),
                         Row(
                           children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFE8D0FC),
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
                             Text('Remaining',style: GoogleFonts.arimo(
                               fontSize: 14,
                               color: Colors.black,
@@ -193,6 +204,17 @@ class _HomeState extends State<Home> {
                         SizedBox(height: 13,),
                         Row(
                           children: [
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                color: Color(0xFF6106A9),
+                                borderRadius: BorderRadius.all(Radius.circular(5)),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
                             Text('Completed',style: GoogleFonts.arimo(
                                 fontSize: 14,
                                 color: Colors.black,
@@ -215,7 +237,7 @@ class _HomeState extends State<Home> {
                     color: Color(0xFFDEFEFE)
                   ),
                   child: Text('Quick Menu',style: GoogleFonts.arimo(
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w500,
                       fontSize: 12,
                       color: Colors.black
                   ),textAlign: TextAlign.center,),
@@ -250,18 +272,18 @@ class _HomeState extends State<Home> {
                              Container(
                               width: MediaQuery.of(context).size.width*0.23 ,
                                child: Text('Patient Records',style: GoogleFonts.arimo(
-                                   fontWeight: FontWeight.normal,
+                                   fontWeight: FontWeight.w500,
                                    fontSize: 16,
                                    color: Colors.black
                                ),),
                              ),
                              Spacer(),
-                             Image.asset('assets/images/Patient.png',height: 25,width: 25,),
+                             Image.asset('assets/images/Patient.png',height: 25,width: 25,color: Color(0xFF006270),),
                            ],
                          ),
                           SizedBox(height: 6,),
                           Text('Maintain and manage Patient records.',style: GoogleFonts.arimo(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: Color(0xFF006270)
                           ),),
@@ -275,7 +297,7 @@ class _HomeState extends State<Home> {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> AppointmentAnalysis()));
                     },
                     child: Container(
-                      padding: EdgeInsets.only(left: 12,right: 20,top: 20),
+                      padding: EdgeInsets.only(left: 12,right: 10,top: 20),
                       width: MediaQuery.of(context).size.width*0.4,
                       height: MediaQuery.of(context).size.height*0.15,
                       decoration: const BoxDecoration(
@@ -295,20 +317,20 @@ class _HomeState extends State<Home> {
                           Row(
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width*0.23 ,
-                                child: Text('Past appointments',style: GoogleFonts.arimo(
-                                    fontWeight: FontWeight.normal,
+                                width: MediaQuery.of(context).size.width*0.27,
+                                child: Text('Past \nappointments',style: GoogleFonts.arimo(
+                                    fontWeight: FontWeight.w500,
                                     fontSize: 16,
                                     color: Colors.black
                                 ),),
                               ),
                               Spacer(),
-                              Image.asset('assets/images/Pastappointments.png',height: 25,width: 25,),
+                              Image.asset('assets/images/Pastappointments.png',height: 25,width: 25,color: Color(0xFF006270),),
                             ],
                           ),
                           SizedBox(height: 6,),
                           Text('Record of past appointments.',style: GoogleFonts.arimo(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: Color(0xFF006270)
                           ),),
@@ -322,47 +344,52 @@ class _HomeState extends State<Home> {
               Row(
                 children: [
 
-                  Container(
-                      padding: EdgeInsets.only(left: 12,right: 20,top: 20),
-                      width: MediaQuery.of(context).size.width*0.4,
-                      height: MediaQuery.of(context).size.height*0.15,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(8.5)),
-                          color: Color(0xFFF9F4FE),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Color(0xFFA342EF),
-                              offset: Offset(0, 2),
-                              blurRadius: 3,
-                              spreadRadius: 0,
-                            )
-                          ]
+                  InkWell(
+                    onTap:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>StaffRecord()));
+                    },
+                    child: Container(
+                        padding: EdgeInsets.only(left: 12,right: 20,top: 20),
+                        width: MediaQuery.of(context).size.width*0.4,
+                        height: MediaQuery.of(context).size.height*0.15,
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(8.5)),
+                            color: Color(0xFFF9F4FE),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color(0xFFA342EF),
+                                offset: Offset(0, 2),
+                                blurRadius: 3,
+                                spreadRadius: 0,
+                              )
+                            ]
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width*0.23 ,
+                                  child: Text('Manage Staff',style: GoogleFonts.arimo(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      color: Colors.black
+                                  ),),
+                                ),
+                                Spacer(),
+                                Image.asset('assets/images/manage.png',height: 25,width: 25,color: Color(0xFF006270),),
+                              ],
+                            ),
+                            SizedBox(height: 6,),
+                            Text('Maintain and manage your Staff records',style: GoogleFonts.arimo(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12,
+                                color: Color(0xFF006270)
+                            ),),
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width*0.23 ,
-                                child: Text('Manage Staff',style: GoogleFonts.arimo(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16,
-                                    color: Colors.black
-                                ),),
-                              ),
-                              Spacer(),
-                              Image.asset('assets/images/manage.png',height: 25,width: 25,),
-                            ],
-                          ),
-                          SizedBox(height: 6,),
-                          Text('Maintain and manage your Staff records',style: GoogleFonts.arimo(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12,
-                              color: Color(0xFF006270)
-                          ),),
-                        ],
-                      ),
-                    ),
+                  ),
 
                   Spacer(),
                   InkWell(
@@ -392,18 +419,18 @@ class _HomeState extends State<Home> {
                               Container(
                                 width: MediaQuery.of(context).size.width*0.23 ,
                                 child: Text('Payment Records',style: GoogleFonts.arimo(
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
                                     fontSize: 16,
                                     color: Colors.black
                                 ),),
                               ),
                               Spacer(),
-                              Image.asset('assets/images/paymentRecords.png',height: 25,width: 25,),
+                              Image.asset('assets/images/paymentRecords.png',height: 25,width: 25,color: Color(0xFF006270),),
                             ],
                           ),
                           SizedBox(height: 6,),
                           Text('Record of your payments.',style: GoogleFonts.arimo(
-                              fontWeight: FontWeight.normal,
+                              fontWeight: FontWeight.w400,
                               fontSize: 12,
                               color: Color(0xFF006270)
                           ),),

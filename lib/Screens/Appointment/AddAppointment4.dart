@@ -12,7 +12,7 @@ class AddAppointment4 extends StatefulWidget {
   State<AddAppointment4> createState() => _AddAppointment4State();
 }
   var valueTicket = 10;
-   int _page = 1;
+   int _page = 0;
 
 class _AddAppointment4State extends State<AddAppointment4> {
   void pageState() {

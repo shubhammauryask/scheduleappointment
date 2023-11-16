@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scheduleappointment/Screens/Home/AppointmentAnalysis.dart';
+import 'package:scheduleappointment/Screens/Home/FeedbackPaymentAnalysis.dart';
 import 'package:scheduleappointment/Screens/Home/PatientAnalysis.dart';
 import 'package:scheduleappointment/Screens/Home/PaymentAnalysis.dart';
+import 'package:scheduleappointment/Screens/Home/superadminProfile.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -101,9 +103,14 @@ class _NavBarState extends State<NavBar> {
                               SizedBox(
                                 height: 4,
                               ),
-                              Image.asset(
-                                'assets/images/Editbutton.png',
-                                width: 35,
+                              InkWell(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SuperAdminProfile()));
+                                },
+                                child: Image.asset(
+                                  'assets/images/Editbutton.png',
+                                  width: 40,
+                                ),
                               ),
                             ],
                           ),
@@ -377,12 +384,17 @@ class _NavBarState extends State<NavBar> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
-                    child: Text(
-                      'Feedback',
-                      style: GoogleFonts.arimo(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black,
+                    child: InkWell(
+                       onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>FeedbackPaymentAnaylsis()));
+                       },
+                      child: Text(
+                        'Feedback',
+                        style: GoogleFonts.arimo(
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),

@@ -45,12 +45,12 @@ class _OnboardingState extends State<Onboarding> {
                   children: [
                     Text('Connecting Healers',style: GoogleFonts.arimo(
                       fontSize: 24,
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w600,
                       color: Colors.black
                     ),),
                     SizedBox(height: 8,),
                     Text('Access top-tier healthcare with our telemedicine app. Connect with renowned specialist doctors, conveniently book lab tests at nearby hospitals, and effortlessly purchase a wide range of diagnostic tests, all from the palm of your hand.',style:GoogleFonts.arimo(
-                      fontWeight: FontWeight.normal,
+                      fontWeight: FontWeight.w400,
                       fontSize: 14,
                       color: Colors.black,
                     ),textAlign: TextAlign.center,
@@ -81,8 +81,8 @@ class _OnboardingState extends State<Onboarding> {
                       'Next',
                       style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black),
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
                     )),
               ),
             ],

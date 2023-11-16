@@ -23,7 +23,7 @@ class _AddAppointment3State extends State<AddAppointment3> {
   DateTime selectedDate = DateTime.now();
   TimeOfDay selectedTime = TimeOfDay.now();
 
-  int _page = 1;
+  int _page = 0;
   void pageState() {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
