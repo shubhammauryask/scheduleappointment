@@ -393,6 +393,7 @@ class _SuperAdminProfileState extends State<SuperAdminProfile> {
               height: 16,
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'Appointment Slots',
@@ -401,16 +402,17 @@ class _SuperAdminProfileState extends State<SuperAdminProfile> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(
+                  width: 47,
+                  child: Divider(
+                    height: 3,
+                    thickness: 2,
+                    color: Color(0xFF009394),
+                  ),
+                ),
               ],
             ),
-            SizedBox(
-              width: 47,
-              child: Divider(
-                height: 3,
-                thickness: 2,
-                color: Color(0xFF009394),
-              ),
-            ),
+
             SizedBox(
               height: 8,
             ),
