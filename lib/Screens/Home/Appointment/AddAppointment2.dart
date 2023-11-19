@@ -1,79 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:scheduleappointment/Screens/Appointment/AddAppointment2.dart';
-import 'package:scheduleappointment/Screens/Appointment/AddAppointment3.dart';
-import 'package:scheduleappointment/Screens/Appointment/AddAppointment4.dart';
-import 'package:scheduleappointment/Screens/Home/home.dart';
+import '../../../Appointments/Appointment.dart';
+import '../../Chat/Chat.dart';
+import '../../Notification/notifications.dart';
+import '../home.dart';
+import 'AddAppointment3.dart';
+import 'AddAppointment4.dart';
 
-import '../Notification/notifications.dart';
-import '../Chat/Chat.dart';
-
-class AddAppointment1 extends StatefulWidget {
-  AddAppointment1({super.key});
+class AddAppointment2 extends StatefulWidget {
+  AddAppointment2({super.key});
 
   @override
-  State<AddAppointment1> createState() => _AddAppointment1State();
+  State<AddAppointment2> createState() => _AddAppointment2State();
 }
 
-class _AddAppointment1State extends State<AddAppointment1> {
-  var visibility = false;
+class _AddAppointment2State extends State<AddAppointment2> {
+  @override
   var mobileNumber = TextEditingController();
+
   var name = TextEditingController();
+
   var age = TextEditingController();
+
   var birthDate = TextEditingController();
+
   var gender = TextEditingController();
-  DateTime selectedDate = DateTime.now();
-  String imageCheck = 'assets/images/Rectangle 1247.png';
+  String  imageCheck = 'assets/images/Rectangle 1247.png';
+
   int _page = 0;
   void pageState() {
-    if (_page == 0) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
-    } else if (_page == 1) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AddAppointment1()));
-    } else if (_page == 2) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => WhatsApp()));
-    } else if (_page == 3) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => notificationPage()));
+    if(_page  == 0){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+    }else if(_page == 1){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Appointment()));
+    }else if(_page == 2){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>WhatsApp()));
+    }else if(_page == 3){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>notificationPage()));
     }
   }
 
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate:
-          DateTime.now(), // Initial date displayed when the picker opens
-      firstDate: DateTime(2000), // Minimum allowable date
-      lastDate: DateTime(2101), // Maximum allowable date
-    );
-
-    if (picked != null && picked != selectedDate) {
-      // Do something with the selected date, e.g., update it in your state
-      setState(() {
-        selectedDate = picked;
-      });
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
-    birthDate.text = selectedDate.toString().split(" ")[0];
+    mobileNumber.text = '8965132654';
+    name.text = 'Jane Doe';
+    birthDate.text = '24-05-1986';
+    age.text = '37';
+    gender.text = 'Female';
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
         leading: InkWell(
-            onTap: () {
+          onTap: (){
             Navigator.pop(context);
-            },
+          },
             child: Icon(
-              Icons.arrow_back,
-              size: 24,
-              color: Colors.black,
-            )),
+          Icons.arrow_back,
+          size: 24,
+          color: Colors.black,
+        )),
         title: Text(
           'Add Appointment',
           style: TextStyle(
@@ -82,25 +69,18 @@ class _AddAppointment1State extends State<AddAppointment1> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: Image.asset(
-              'assets/images/iconoir_cancel.png',
-              height: 28,
-              width: 28,
-              color: Colors.black,
-            ),
+            child: Image.asset('assets/images/iconoir_cancel.png',height: 28,width: 28,color: Colors.black,),
           )
         ],
       ),
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+        padding: EdgeInsets.all(17),
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/background.png'), // Replace with your image path
             fit: BoxFit.cover,
           ),
         ),
-        padding: EdgeInsets.only(left: 17, right: 17, top: 17),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -125,13 +105,6 @@ class _AddAppointment1State extends State<AddAppointment1> {
               ),
               TextFormField(
                 controller: mobileNumber,
-                onChanged: (value) {
-                  if (mobileNumber.text.length == 10) {
-                    setState(() {
-                      visibility = true;
-                    });
-                  }
-                },
                 inputFormatters: [LengthLimitingTextInputFormatter(10)],
                 decoration: InputDecoration(
                     hintText: 'Mobile',
@@ -158,80 +131,6 @@ class _AddAppointment1State extends State<AddAppointment1> {
                   color: Color(0xFF00E0C7),
                 ),
                 cursorColor: Color(0xFF6A798A),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Visibility(
-                visible: visibility,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: Text(
-                        'The number is already present in the directory. Do you want to add new patient?',
-                        style: GoogleFonts.arimo(
-                            fontSize: 14, color: Color(0xFF6A798A)),
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.17,
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Color(0xFF009394)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    7), // Set the radius to 0 for a rectangular shape
-                              ),
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AddAppointment2()));
-                          },
-                          child: Text(
-                            'Yes',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          )),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.17,
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Color(0xFFFFFFFF)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                    7), // Set the radius to 0 for a rectangular shape
-                              ),
-                            ),
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              visibility = false;
-                            });
-                          },
-                          child: Text(
-                            'No',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black),
-                          )),
-                    ),
-                  ],
-                ),
               ),
               SizedBox(
                 height: 10,
@@ -264,19 +163,12 @@ class _AddAppointment1State extends State<AddAppointment1> {
                     width: MediaQuery.of(context).size.width * 0.6,
                     child: TextFormField(
                         controller: birthDate,
-
                         decoration: InputDecoration(
-                            suffixIcon: InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    _selectDate(context);
-                                  });
-                                },
-                                child: Icon(
-                                  Icons.arrow_drop_down,
-                                  size: 30,
-                                  color: Color(0xFF00E0C7),
-                                )),
+                            suffixIcon: Icon(
+                              Icons.arrow_drop_down,
+                              size: 20,
+                              color: Color(0xFF00E0C7),
+                            ),
                             hintText: 'Select Birthdate',
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -349,21 +241,22 @@ class _AddAppointment1State extends State<AddAppointment1> {
               Row(
                 children: [
                   InkWell(
-                      onTap: () {
-                        setState(() {
-                          if (imageCheck ==
-                              'assets/images/charm_circle-tick.png') {
-                            imageCheck = 'assets/images/Rectangle 1247.png';
-                          } else {
-                            imageCheck = 'assets/images/charm_circle-tick.png';
-                          }
-                        });
-                      },
-                      child: Image.asset(
-                        imageCheck,
-                        height: 24,
-                        width: 24,
-                      )),
+                    onTap: (){
+                      setState(() {
+                        if(imageCheck == 'assets/images/charm_circle-tick.png' ){
+                          imageCheck = 'assets/images/Rectangle 1247.png';
+                        }else{
+                          imageCheck = 'assets/images/charm_circle-tick.png';
+                        }
+                      });
+
+                    },
+                    child: Image.asset(
+                      imageCheck,
+                      height: 24,
+                      width: 24,
+                    ),
+                  ),
                   SizedBox(
                     width: 20,
                   ),
@@ -375,7 +268,7 @@ class _AddAppointment1State extends State<AddAppointment1> {
                 ],
               ),
               SizedBox(
-                height: 80,
+                height: 100,
               ),
               Center(
                 child: Container(
@@ -425,7 +318,7 @@ class _AddAppointment1State extends State<AddAppointment1> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Center(
                 child: Container(
@@ -444,12 +337,10 @@ class _AddAppointment1State extends State<AddAppointment1> {
                         ),
                       ),
                       onPressed: () {
-                        if (mobileNumber.text.length == 10) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AddAppointment3()));
-                        }
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddAppointment3()));
                       },
                       child: Text(
                         'Schedule for later',
@@ -469,11 +360,12 @@ class _AddAppointment1State extends State<AddAppointment1> {
         type: BottomNavigationBarType.fixed,
         currentIndex: _page,
         showSelectedLabels: true,
+
         selectedLabelStyle: TextStyle(
-          color: Colors.white
+            color: Colors.white,
         ),
         unselectedLabelStyle: TextStyle(
-          color: Colors.black
+            color: Colors.black
         ),
         items: [
           BottomNavigationBarItem(

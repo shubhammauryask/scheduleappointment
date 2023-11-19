@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:scheduleappointment/Models/AppointmentSlot/AppointmentSlots.dart';
 import 'package:scheduleappointment/Widgets/AppointmentSlort/AppointmentSlort.dart';
 
-import '../Appointment/AddAppointment1.dart';
+import '../../Appointments/Appointment.dart';
 import '../Chat/Chat.dart';
 import '../Notification/notifications.dart';
 import 'home.dart';
@@ -70,7 +70,7 @@ class _SuperAdminProfileState extends State<SuperAdminProfile> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     } else if (_page == 1) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AddAppointment1()));
+          context, MaterialPageRoute(builder: (context) => Appointment()));
     } else if (_page == 2) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => WhatsApp()));

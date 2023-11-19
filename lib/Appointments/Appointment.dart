@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../Appointments/Appointment.dart';
-import '../Home/home.dart';
-import '../Notification/notifications.dart';
+import '../Screens/Chat/Chat.dart';
+import '../Screens/Home/home.dart';
+import '../Screens/Notification/notifications.dart';
 
-class WhatsApp extends StatefulWidget {
-  const WhatsApp({super.key});
+class Appointment extends StatefulWidget {
+  const Appointment({super.key});
 
   @override
-  State<WhatsApp> createState() => _WhatsAppState();
+  State<Appointment> createState() => _AppointmentState();
 }
 
-class _WhatsAppState extends State<WhatsApp> {
-  int _page = 2;
+class _AppointmentState extends State<Appointment> {
+  int _page = 1;
   void pageState() {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
@@ -24,17 +24,11 @@ class _WhatsAppState extends State<WhatsApp> {
       Navigator.push(context, MaterialPageRoute(builder: (context)=>notificationPage()));
     }
   }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/background.png'), // Replace with your image path
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Center(child: Text('Chat'))),
+      body: Center(
+        child: Text('Appointment'),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color(0xff00E0C7),
         type: BottomNavigationBarType.fixed,

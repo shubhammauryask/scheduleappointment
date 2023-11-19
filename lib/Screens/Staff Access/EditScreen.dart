@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Appointment/AddAppointment1.dart';
+import '../../Appointments/Appointment.dart';
 import '../Chat/Chat.dart';
 import '../Home/home.dart';
 import '../Notification/notifications.dart';
@@ -56,7 +56,7 @@ class _EditScreenState extends State<EditScreen> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
     } else if (_page == 1) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AddAppointment1()));
+          context, MaterialPageRoute(builder: (context) => Appointment()));
     } else if (_page == 2) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => WhatsApp()));

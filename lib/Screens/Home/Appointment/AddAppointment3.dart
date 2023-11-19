@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../Chat/Chat.dart';
-import '../Home/home.dart';
-import '../Notification/notifications.dart';
+import '../../../Appointments/Appointment.dart';
+import '../../Chat/Chat.dart';
+import '../../Notification/notifications.dart';
+import '../home.dart';
 import 'AddAppointment4.dart';
 
 class AddAppointment3 extends StatefulWidget {
@@ -28,7 +29,7 @@ class _AddAppointment3State extends State<AddAppointment3> {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
     }else if(_page == 1){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppointment3()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Appointment()));
     }else if(_page == 2){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>WhatsApp()));
     }else if(_page == 3){

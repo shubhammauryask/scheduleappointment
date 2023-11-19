@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scheduleappointment/Widgets/Staff%20Record/StaffRecord.dart';
 import '../../../Models/Staff Record/Staffrecord.dart';
-import '../Appointment/AddAppointment1.dart';
+import '../../Appointments/Appointment.dart';
 import '../Chat/Chat.dart';
 import '../Home/home.dart';
 import '../Notification/notifications.dart';
@@ -24,7 +24,7 @@ class _StaffRecordState extends State<StaffRecord> {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
     }else if(_page == 1){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppointment1()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Appointment()));
     }else if(_page == 2){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>WhatsApp()));
     }else if(_page == 3){

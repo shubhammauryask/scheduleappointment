@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Appointment/AddAppointment1.dart';
+import '../../Appointments/Appointment.dart';
 import '../Home/home.dart';
 import '../Chat/Chat.dart';
 
@@ -17,7 +17,7 @@ class _notificationPageState extends State<notificationPage> {
     if(_page  == 0){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
     }else if(_page == 1){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppointment1()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Appointment()));
     }else if(_page == 2){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>WhatsApp()));
     }else if(_page == 3){

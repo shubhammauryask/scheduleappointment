@@ -1,11 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../Appointments/Appointment.dart';
 import '../../Services/Drawer/NavBar.dart';
-import '../Appointment/AddAppointment1.dart';
 import '../Notification/notifications.dart';
 import '../Chat/Chat.dart';
 import '../Staff Access/Staffrecord.dart';
+import 'Appointment/AddAppointment1.dart';
 import 'AppointmentAnalysis.dart';
 import 'PatientAnalysis.dart';
 import 'PaymentAnalysis.dart';
@@ -24,7 +25,7 @@ class _HomeState extends State<Home> {
       if(_page  == 0){
         Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
       }else if(_page == 1){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppointment1()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>Appointment()));
       }else if(_page == 2){
         Navigator.push(context, MaterialPageRoute(builder: (context)=>WhatsApp()));
       }else if(_page == 3){
@@ -57,7 +58,9 @@ class _HomeState extends State<Home> {
           ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {  },
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddAppointment1()));
+        },
         backgroundColor: Color(0xFF740AC7),
         child: Image.asset('assets/images/accountmultipleadd.png',color: Colors.white,),
       ),
